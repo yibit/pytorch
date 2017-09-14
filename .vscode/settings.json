@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.h": "cpp",
+        "*.c": "c",
+        "*.cc": "cpp",
+        "*.py": "python",
+        "tools/*": "shellscript",
+        "*.mk": "makefile",
+        "*.sh": "shellscript"
+    },
+    "files.encoding": "utf8"
+}

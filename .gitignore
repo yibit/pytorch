@@ -1,0 +1,5 @@
+.vscode/tags
+notebook/.ipynb_checkpoints
+src/tensorflow_viz
+.DS_Store
+*~

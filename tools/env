@@ -1,0 +1,3 @@
+#!/bin/sh
+
+source ~/tensorflow/tensorflow-env/bin/activate

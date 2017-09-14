@@ -1,0 +1,6 @@
+yapf
+pylint
+pytest
+pytest-cov
+pandas
+xlrd
