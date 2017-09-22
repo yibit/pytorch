@@ -1,4 +1,5 @@
 #!/bin/sh
 
-jupyter-lab
- 
+#jupyter-lab
+
+jupyter lab

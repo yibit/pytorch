@@ -6,11 +6,15 @@ sudo easy_install pip
 sudo pip install --upgrade virtualenv
 sudo pip install jupyter
 
-sudo pip install jupyterlab
-
 mkdir ~/tensorflow
 virtualenv --system-site-packages  ~/tensorflow/tensorflow-env
 
 source ~/tensorflow/tensorflow-env/bin/activate
 
 sudo pip install --upgrade tensorflow
+
+sudo pip install jupyterlab
+
+# maybe not works
+jupyter serverextension enable --py jupyterlab --sys-prefix
+

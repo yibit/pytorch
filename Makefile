@@ -14,3 +14,10 @@ unittest:
 
 pylint:
 	pylint --rcfile=pylint.conf src/*.py tests/*.py
+
+jupyter:
+	cd notebook && ../tools/jupyter
+
+jupyterlab:
+	cd jupyterlab && ../tools/jupyterlab
+
