@@ -1,0 +1,8 @@
+pytorch:
+    image: yibit-pytorch
+    ports:
+      - 9876:9876
+      - 19221:19221
+    links:
+    environment:
+    volumes:

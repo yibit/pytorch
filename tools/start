@@ -1,4 +1,9 @@
 #!/bin/sh
 
-tensorflow
+pytorch=`cat ~/.zshrc |grep "alias pytorch=\"source" |awk -F 'source' '{ print $2; }' |awk -F'\"' '{ print $1; }'`
 
+if test "x$pytorch" != "x"; then
+    echo "source $pytorch"
+fi
+
+# deactivate

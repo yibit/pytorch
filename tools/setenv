@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# pytorch
+
+echo 'alias pytorch="source ~/pytorch/pytorch-env/bin/activate"' >> ~/.zshrc
+
+source ~/.zshrc

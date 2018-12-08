@@ -1,5 +1,5 @@
 .vscode/tags
-notebook/.ipynb_checkpoints
-src/tensorflow_viz
+.vscode/database.json
+.ipynb_checkpoints
 .DS_Store
 *~

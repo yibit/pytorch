@@ -1,0 +1,62 @@
+#!/bin/sh
+
+MYHOME=`pwd`
+manta="manta.sh"
+
+cat > $manta <<EOF
+#!/bin/sh
+
+usage()
+{
+    echo "Usage:                        "
+    echo "        \$0 <project name>     "
+    echo "                              "
+
+    return 0
+}
+
+if test \$# -ne 1; then
+    usage
+    exit 1
+fi
+
+NAME=\$1
+
+EOF
+
+base=`find $MYHOME -type d |grep -v -E "(.git|ipynb)"`
+for f in $base; do
+
+    if test "x$f" = "x."; then
+        continue;
+    fi
+
+    xf=`echo $f |awk -F "$MYHOME/" ' { print $2; } '` 
+    echo "mkdir -p \$NAME/$xf" >> $manta
+done
+
+echo "\n" >> $manta
+
+base=`find $MYHOME -type f |grep -v -E "(.git\/|ipynb|tensorflow_viz|.DS_Store|xlsx|tags|$manta|$0)"`
+for f in $base; do
+
+    xf=`echo $f |awk -F "$MYHOME/" ' { print $2; } '`
+    echo "cat > \$NAME/$xf <<EOF" >> $manta
+    cat $xf >> $manta
+    echo "EOF\n" >> $manta
+
+done
+
+cat >> $manta <<EOF
+
+UNAME=`uname -s`
+
+if test "x$UNAME" == "xDarwin"; then
+    find \$NAME -type f |xargs grep -l manta |xargs -I {} sed -i '' "s/manta/\$NAME/g" {}
+else
+    find \$NAME -type f |xargs grep -l manta |xargs -I {} sed -i "s/manta/\$NAME/g" {}
+fi
+
+git init
+
+EOF

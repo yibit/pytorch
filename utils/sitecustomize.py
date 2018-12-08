@@ -1,6 +1,6 @@
 # encoding=utf8
 
-# lib/python2.7/site-packages/sitecustomize.py
+# cp sitecustomize.py /usr/local/lib/python2.7/site-packages/
 
 import sys
 
