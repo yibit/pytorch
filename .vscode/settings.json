@@ -8,5 +8,11 @@
         "*.mk": "makefile",
         "*.sh": "shellscript"
     },
-    "files.encoding": "utf8"
+    "files.encoding": "utf8",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.pytest_cache": true,
+        "**/.DS_Store": true,
+        "**/.ipynb_checkpoints": true
+    }
 }

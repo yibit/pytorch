@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# jupyter-notebook
-
-jupyter notebook

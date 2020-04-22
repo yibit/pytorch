@@ -1,5 +1,6 @@
 .vscode/tags
 .vscode/database.json
 .ipynb_checkpoints
+__pycache__
 .DS_Store
 *~

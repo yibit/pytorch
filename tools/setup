@@ -2,19 +2,14 @@
 
 set -ex
 
-sudo easy_install pip
-sudo pip install --upgrade virtualenv
-sudo pip install jupyter
+# https://pytorch.org/docs/stable/index.html
+conda install pytorch torchvision -c pytorch
 
-mkdir ~/pytorch
-virtualenv --system-site-packages  ~/pytorch/pytorch-env
+# https://github.com/jupyterlab/jupyterlab
+conda install -c conda-forge jupyterlab
 
-source ~/pytorch/pytorch-env/bin/activate
+# tensorboard
+conda install tensorboard
 
-pip install http://download.pytorch.org/whl/torch-0.2.0.post3-cp27-none-macosx_10_7_x86_64.whl
-pip install torchvision
-
-sudo pip install jupyterlab
-
-# maybe not works
-jupyter serverextension enable --py jupyterlab --sys-prefix
+# altair - # https://altair-viz.github.io/getting_started/installation.html#installation-notebook
+conda install -c conda-forge altair vega_datasets jupyterlab

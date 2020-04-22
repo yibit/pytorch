@@ -7,9 +7,8 @@ usage:
 	@echo "                                                    "
 	@echo "The commands are:                                   "
 	@echo "                                                    "
-	@echo "    run         start the runner                    "
-	@echo "    note        run jupyter notebook                "
 	@echo "    jupyter     run jupyterlab                      "
+	@echo "    tensorboard run tensorboard --logdir=runs       "
 	@echo "    tests       run unit test                       "
 	@echo "    format      run yapf on python code files       "
 	@echo "    docker      build the docker images             "
@@ -21,10 +20,9 @@ format:
 	yapf -i -r src tests --style=yapf.style
 
 deps:
-	sh tools/setup 
-	pip install -r requirements.txt
+	pip3 install -r requirements.txt
 
-check tests pytest:
+check test pytest:
 	pytest --showlocals --durations=1 --pyargs
 
 unittest:
@@ -33,16 +31,16 @@ unittest:
 pylint:
 	pylint --rcfile=pylint.conf src/*.py tests/*.py
 
-note:
-	cd notebook && ../tools/jupyter
-
 jupyter:
 	cd jupyterlab && ../tools/jupyterlab
+
+tensorboard:
+	cd jupyterlab && tensorboard --logdir=runs
 
 docker build image:
 	docker build -t yibit-pytorch .
 
-run:
+compose:
 	docker-compose up
 
 rmi:

@@ -4,3 +4,9 @@ pytest
 pytest-cov
 pandas
 xlrd
+
+torch
+torchvision
+tensorboard
+altair
+vega_datasets
